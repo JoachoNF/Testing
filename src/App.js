@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Main from './components/Main'
+//import Counter from './components/Counter';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    return (
+    <>
+    <Header/>
+    <Main/>
+    <Footer/>
+    </>
   );
 }
 
+/*
+Tener cuidado con Finally porque puede ejecutarse antes que el then del mismo fetch
+-
+El useEffect se ejecuta luego del renderizado y depnde de su ejecución, el cambio de la dependencia de modo:
+useEffect(()=>{
+  funcion ejecutable;
+}[dependencia])
+Cada vez que cambie la dependencia se ejecutara el useEffect. { [] solo una vez ; vacio siempre }
+
+*/ 
 export default App;
