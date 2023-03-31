@@ -1,11 +1,12 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 import CardContainer from './CardContainer'
 
 const Main = () => {
   return (
-    <div>
-        <CardContainer/>
-    </div>
+    <Routes>
+        <Route path='/Exoplanetas' element={<CardContainer/>}/>
+    </Routes>
   )
 }
 
