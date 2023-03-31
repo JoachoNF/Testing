@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Styles from './Style.module.css'
 
 const CardContainer = () => {
   
@@ -30,12 +31,27 @@ const CardContainer = () => {
     */
    let falseP = {};
    let i=0;
+   /* let conditions = new Array;
+    const agrConditions = ()=>{
+    URL.slice(URL.indexOf('where')+6,URL.indexOf('&order')).split('and').forEach(element => {
+      
+    })
+   } */
   return (
     <div>
         <h1>Exoplanetas</h1>
-        <h2>Filtros: score mayor a 0 ; periodo entre 300d y 450d ; temperatura entre 100k y 450k</h2>
-        <h2>Falsos positivos en consola</h2>
-        <div style={{margin:'3%',display:'flex',flexWrap:'wrap'}}>
+        <h2>Filtros:
+          {
+            URL.slice(URL.indexOf('where')+6,URL.indexOf('&order')).split('and').map((element)=>{
+              return(
+              <h6 style={{margin:'5px'}}>
+                {element}
+              </h6>)
+            })
+          }
+        </h2>
+
+        <div className={Styles.CardContainer}>
           {
            
             items.map((exo)=>{
@@ -52,8 +68,10 @@ const CardContainer = () => {
               return(null)
             }
           })
-          }{console.log(falseP)}
+          }
           
+          {//Imprimo los falsos positivos en consola en un solo objeto para mejor manejo de la informacion
+          console.log(falseP)}
           
         </div>
     </div>
