@@ -14,8 +14,11 @@ const Header = () => {
               <img src='logo192.png' alt='Logo'></img>
             </Link>
           <ul className={Styles.Navbar}>
-            
-            <Link to='/Exoplanetas'>Exoplanetas</Link>
+            <>
+            <Link style={{margin:'5px'}} to='/Exoplanetas'>Exoplanetas</Link>
+            <Link style={{margin:'5px'}} to='/Exoplanetas/Confirmed'>Confirmed</Link>
+            <Link style={{margin:'5px'}} to='/Exoplanetas/Confirmed/MXS'>Maximos Puntajes</Link>
+            </>
 
           </ul>
         </div>
