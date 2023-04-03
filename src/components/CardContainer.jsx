@@ -1,5 +1,6 @@
 import React from 'react';
 import Styles from './Style.module.css'
+import { Link } from 'react-router-dom';
 
 const CardContainer = ({exo}) => {
      
@@ -11,6 +12,7 @@ const CardContainer = ({exo}) => {
                 <h3 style={{margin:'2px'}}>Exoplaneta {exo.kepoi_name} {exo.koi_disposition}</h3>
                 <h5 style={{margin:'2px'}}>Temperatura: {exo.koi_teq - 273}°C</h5>
                 <h5 style={{margin:'2px'}}>Periodo orbital: {exo.koi_period} dias</h5>
+                <Link to={`/Exoplanetas/detail/${exo.kepoi_name}`}>Ver detalles</Link>
               </div>
   )
 }

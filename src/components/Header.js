@@ -22,7 +22,6 @@ const Header = () => {
 
           </ul>
         </div>
-        
   )
 }
 //onMouseOver={changeColor()} onClick={changeColor()}

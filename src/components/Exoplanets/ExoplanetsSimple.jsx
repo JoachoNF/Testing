@@ -19,24 +19,23 @@ const ExoplanetsSimple = () => {
   return (
     <div>
         <h1>Exoplanetas</h1>
-        <h2>Filtros:
+        <h2>Filtros:</h2>
           {
             URL.slice(URL.indexOf('where')+6,URL.indexOf('&order')).split('and').map((element)=>{
+
               return(
-              <h6 style={{margin:'5px'}}>
-                {element}
-              </h6>)
+                <h4 style={{margin:'5px'}} key={element.toString()}>
+                {element.slice(element.indexOf('_')+1,element.length)}
+              </h4>)
             })
           }
-        </h2>
-
         <div className={Styles.CardContainer}>
           {
            
             items.map((exo)=>{
             if(exo.koi_disposition!=='FALSE POSITIVE'){ 
             return(
-              <CardContainer exo={exo} />
+              <CardContainer exo={exo} key={exo.kepid}/>
             )}else{
               falseP[i]=exo;
               i++;
