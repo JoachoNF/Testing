@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import ExoplanetsSimple from './Exoplanets/ExoplanetsSimple'
 import ExoplanetsConfirmed from './Exoplanets/ExoPConfirmed'
 import ExoplanetsConfirmedMXScore from './Exoplanets/ExoPConfMXScore'
-import DetailContainer from './DetailContainer'
+import DetailContainer from '../DetailContainer'
 
 
 const Main = () => {

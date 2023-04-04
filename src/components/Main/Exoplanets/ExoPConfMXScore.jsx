@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Styles from '.././Style.module.css'
-import CardContainer from '../CardContainer'
+import Styles from '../../Style.module.css'
+import CardContainer from '../../CardContainer'
 
 const ExoPConfirmed = () => {
   const URL = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&select=kepid,kepoi_name,koi_disposition,koi_score,koi_teq,koi_period,koi_prad&where=koi_disposition like \'CONFIRMED\' and koi_score=1 and koi_teq<400&order=koi_disposition,koi_score,koi_teq&format=json'

@@ -1,34 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import Styles from '.././Style.module.css'
-import CardContainer from '../CardContainer';
+import Styles from '../../Style.module.css'
+import CardContainer from '../../CardContainer';
 
-const ExoplanetsSimple = () => {
-  
-    //logica de request de productos
-    const URL = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&select=kepid,kepoi_name,koi_disposition,koi_score,koi_teq,koi_period,koi_prad&where=koi_score>0 and koi_period<450 and koi_period>300 and koi_prad<2 and koi_teq<450 and koi_teq>100&order=koi_disposition,koi_teq&format=json';
+const ExoPConfirmed = () => {
+    const URL = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&select=kepid,kepoi_name,koi_disposition,koi_score,koi_teq,koi_period,koi_prad&where=koi_disposition like \'CONFIRMED\' and koi_score>0 and koi_teq<300 and koi_teq>-200&order=koi_disposition,koi_score,koi_teq&format=json'
     const [items,setItem] = useState([]);
 
     useEffect(()=>{
-      fetch(URL)
-      .then(res => res.json())
-      .then(res => setItem(res))
-      .catch((err) => console.log(err));
+        fetch(URL)
+        .then(res => res.json())
+        .then(res => setItem(res))
+        .catch((err) => console.log(err));
     },[])
-   let falseP = {};
-   let i=0;
+
+    let falseP = {};
+    let i=0;
   return (
     <div>
         <h1>Exoplanetas</h1>
         <h2>Filtros:</h2>
           {
             URL.slice(URL.indexOf('where')+6,URL.indexOf('&order')).split('and').map((element)=>{
-
               return(
-                <h4 style={{margin:'5px'}} key={element.toString()}>
+              <h4 style={{margin:'5px'}} key={element.toString()}>
                 {element.slice(element.indexOf('_')+1,element.length)}
               </h4>)
             })
           }
+
         <div className={Styles.CardContainer}>
           {
            
@@ -52,4 +51,4 @@ const ExoplanetsSimple = () => {
   )
 }
 
-export default ExoplanetsSimple
+export default ExoPConfirmed

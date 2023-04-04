@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 //import Boton from './Boton';
-import Styles from './Style.module.css'
+import Styles from '../Style.module.css'
 const Header = () => {
   /*const click = ()=>{
     console.log('click')
